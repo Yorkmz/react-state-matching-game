@@ -1,3 +1,3 @@
 import TileSelector from './TileSelector'
 
-export default TileSelector 
+export default TileSelector

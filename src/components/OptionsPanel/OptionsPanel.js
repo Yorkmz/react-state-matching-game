@@ -9,7 +9,6 @@ const OptionsPanel = () => (
     <Button />
   </div>
 )
-  
-  
+
 
 export default OptionsPanel

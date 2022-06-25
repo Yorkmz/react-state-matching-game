@@ -13,7 +13,7 @@ describe('App', () => {
   it('Instantiates the state @instantiate-the-state', () => {
     expect(instance.state, 'Did you instantiate the state?').not.toBeNull()
     expect(instance.state.tiles, 'Did you set tiles on state?').toEqual([])
-    expect(instance.state.numTiles,'Did you set numTiles on state?').toEqual(36)
+    expect(instance.state.numTiles, 'Did you set numTiles on state?').toEqual(36)
     expect(instance.state.playing, 'Did you set playing on state?').toEqual(false)
     expect(instance.state.previousTileIndex, 'Did you set previousTileIndex on state?').toBeNull()
     expect(instance.state.toBeCleared, 'Did you set toBeCleared on state?').toBeNull()
@@ -39,15 +39,15 @@ describe('App', () => {
       tiles: [],
       playing: false,
       numTiles: 8,
-      toBeCleared: [1,2,3],
-      previousTileIndex: 6
+      toBeCleared: [1, 2, 3],
+      previousTileIndex: 6,
     })
 
     const instance = wrapper.instance()
 
     try {
       instance.startGame()
-    } catch(error) {
+    } catch (error) {
 
     }
 
@@ -55,7 +55,6 @@ describe('App', () => {
     expect(instance.state.playing, 'Did you set playing on state?').toEqual(true)
     expect(instance.state.previousTileIndex, 'Did you set previousTileIndex on state?').toBeNull()
     expect(instance.state.toBeCleared, 'Did you set toBeCleared on state?').toBeNull()
-    
   })
 
   it('Passes startGame to OptionsPanel @pass-start-game-to-options', () => {
@@ -63,6 +62,4 @@ describe('App', () => {
 
     expect(typeof optionsPanelProps.startGame, 'Did you pass the startGame method as a prop to OptionsPanel?').toEqual('function')
   })
-
-
 })

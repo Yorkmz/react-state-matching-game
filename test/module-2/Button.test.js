@@ -13,28 +13,27 @@ describe('Button', () => {
     expect(buttonProps.onClick, 'Did you pass the startGame prop to the onClick handler?').toBeInstanceOf(Function)
   })
 
-    it('Conditionally renders text @conditionally-render-text', () => {
-      let buttonChild = wrapper.find('button').childAt(0)
+  it('Conditionally renders text @conditionally-render-text', () => {
+    let buttonChild = wrapper.find('button').childAt(0)
 
-      try {
-        buttonChild = buttonChild.text()
-      } catch(error) {
+    try {
+      buttonChild = buttonChild.text()
+    } catch (error) {
 
-      }
+    }
 
-      expect(buttonChild, 'Did you pass the numTiles prop to TileSelector?').toEqual('start')
+    expect(buttonChild, 'Did you pass the numTiles prop to TileSelector?').toEqual('start')
 
-      wrapper = shallow(<Button playing={true} startGame={() => {}}/>)
-      buttonChild = wrapper.find('button').childAt(0)
+    wrapper = shallow(<Button playing={true} startGame={() => { }} />)
+    buttonChild = wrapper.find('button').childAt(0)
 
-      try {
-        buttonChild = buttonChild.text()
-      } catch(error) {
+    try {
+      buttonChild = buttonChild.text()
+    } catch (error) {
 
-      }
+    }
 
-      expect(buttonChild, 'Did you pass the numTiles prop to TileSelector?').toEqual('reset')
-    })
-
+    expect(buttonChild, 'Did you pass the numTiles prop to TileSelector?').toEqual('reset')
+  })
 })
 
