@@ -15,16 +15,16 @@ class App extends Component {
         toBeCleared: null,
       }
   }
-  startGame = (numTiles) => (
+  startGame = (numTiles) => {
     this.setState((state) => ({
       playing: true,
       previousTileIndex: null,
       toBeCleared: null,
-      tiles: createTiles(),
+      tiles: createTiles(state.numTiles),
     }
     ),
     )
-  )
+  }
   render(props) {
     return (
       <div className="App">
