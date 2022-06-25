@@ -23,7 +23,7 @@ module.exports = {
     'semi': 0,
     'max-len': [0, 150, 10],
     'object-curly-spacing': 0,
-    'react/prop-types': 1,
+    'react/prop-types': 0,
     'indent': 0,
   },
 };

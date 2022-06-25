@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OptionsPanel from '../OptionsPanel';
 import Board from '../Board';
-
+import { createTiles } from '../../misc/utils'
 import './App.css';
 
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
       playing: true,
       previousTileIndex: null,
       toBeCleared: null,
+      tiles: createTiles(),
     }
     ),
     )
@@ -30,8 +31,8 @@ class App extends Component {
         <header className="App-header">
           Turbo-Matcher
         </header>
-        <OptionsPanel playing={props.playing} numTiles={props.numTiles} />
-        <Board numTiles={props.numTiles} tiles={props.tiles} />
+        <OptionsPanel playing={this.state.playing} numTiles={this.state.numTiles} />
+        <Board numTiles={this.state.numTiles} tiles={this.state.tiles} />
       </div>
     );
   }
