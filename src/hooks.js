@@ -9,9 +9,10 @@ const useHover = () => {
         const refCopy = ref
         refCopy.current.addEventListener('mouseenter', enter)
         refCopy.current.addEventListener('mouseleave', leave)
-        refCopy.current.removeEventListener('mouseenter', enter)
-        refCopy.current.removeEventListener('mouseleave', leave)
-        return () => { }
+        return () => {
+            refCopy.current.removeEventListener('mouseenter', enter)
+            refCopy.current.removeEventListener('mouseleave', leave)
+        }
     })
     return (
         [ref, hovered]
